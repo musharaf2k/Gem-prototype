@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEMSHIRE - Luxury Gemstones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <!-- Header -->
+    <header id="main-header" class="header">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="top-bar-left">
+                        <span class="slide-text active">Free shipping worldwide</span>
+                        <span class="slide-text">Certified authentic</span>
+                    </div>
+                    <div class="top-bar-right">
+                        <div class="country-selector-wrapper">
+                            <button id="country-selector" class="country-selector">
+                                <span id="current-country-flag">🇨🇦</span>
+                                <span id="current-country-name">Canada</span>
+                                <svg class="chevron-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6,9 12,15 18,9"></polyline>
+                                </svg>
+                            </button>
+                            <div id="country-dropdown" class="country-dropdown">
+                                <div class="country-option" data-country="canada">
+                                    <span class="flag">🇨🇦</span>
+                                    <span>Canada</span>
+                                </div>
+                                <div class="country-option" data-country="australia">
+                                    <span class="flag">🇦🇺</span>
+                                    <span>Australia</span>
+                                </div>
+                                <div class="country-option" data-country="netherlands">
+                                    <span class="flag">🇳🇱</span>
+                                    <span>Netherlands</span>
+                                </div>
+                                <div class="country-option" data-country="germany">
+                                    <span class="flag">🇩🇪</span>
+                                    <span>Germany</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="main-nav">
+            <div class="container">
+                <div class="nav-content">
+                    <!-- Mobile Left: Hamburger + Search -->
+                    <div class="mobile-nav-left">
+                        <button class="icon-btn mobile-menu-btn" id="mobile-menu-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </button>
+                        <button class="icon-btn" id="search-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Logo - centered on mobile -->
+                    <div class="logo">
+                        <img src="images/logo.jpeg" alt="Gemshire Logo" class="logo-image" />
+                        <h1>GEMSHIRE</h1>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <nav class="desktop-nav">
+                        <a href="shop.html">Collections</a>
+                        <a href="#emeralds">Emeralds</a>
+                        <a href="#rubies">Rubies</a>
+                        <a href="#diamonds">Diamonds</a>
+                        <a href="about.html">About</a>
+                    </nav>
+
+                    <!-- Desktop Actions -->
+                    <div class="nav-actions">
+                        <button class="icon-btn" id="search-btn-desktop">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                        <button class="icon-btn" id="wishlist-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                        <button class="icon-btn cart-btn" id="cart-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            <span id="cart-count" class="cart-count">0</span>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Right: Country Flag -->
+                    <div class="mobile-nav-right">
+                        <div class="country-selector-wrapper">
+                            <button class="mobile-country-selector" id="mobile-country-selector">
+                                <span class="flag">🇨🇦</span>
+                                <svg class="chevron-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6,9 12,15 18,9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="mobile-country-dropdown" id="mobile-country-dropdown">
+                                <div class="country-option" data-country="canada">
+                                    <span class="flag">🇨🇦</span>
+                                    <span>Canada</span>
+                                </div>
+                                <div class="country-option" data-country="australia">
+                                    <span class="flag">🇦🇺</span>
+                                    <span>Australia</span>
+                                </div>
+                                <div class="country-option" data-country="netherlands">
+                                    <span class="flag">🇳🇱</span>
+                                    <span>Netherlands</span>
+                                </div>
+                                <div class="country-option" data-country="germany">
+                                    <span class="flag">🇩🇪</span>
+                                    <span>Germany</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-header">
+                <h2>Menu</h2>
+                <button id="mobile-menu-close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <nav class="mobile-nav">
+                <a href="shop.html">Collections</a>
+                <a href="#emeralds">Emeralds</a>
+                <a href="#rubies">Rubies</a>
+                <a href="#sapphires">Sapphires</a>
+                <a href="#diamonds">Diamonds</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="about-hero-content">
+            <div class="container">
+                <h1 class="about-hero-title">Our Story</h1>
+                <p class="about-hero-subtitle">Three generations of expertise in rare gemstones</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Heritage Section -->
+    <section class="our-heritage">
+        <div class="container">
+            <div class="heritage-content">
+                <div class="heritage-text">
+                    <div class="section-header">
+                        <h2>Heritage & Excellence</h2>
+                        <p>Since 1952, the GEMSHIRE legacy has been built on an unwavering commitment to sourcing the world's most exceptional gemstones.</p>
+                    </div>
+                    <div class="heritage-story">
+                        <p>Founded by master gemologist Thomas Ashworth in the heart of London's diamond district, GEMSHIRE began as a small family business with an extraordinary vision: to make the world's most beautiful and ethically sourced gemstones accessible to discerning collectors worldwide.</p>
+                        
+                        <p>What started as a single storefront has evolved into a global network of gemstone experts, miners, and craftspeople, all united by our shared passion for exceptional quality and ethical practices. Today, we continue to honor Thomas's original vision while embracing modern innovations in gemstone sourcing and certification.</p>
+                        
+                        <p>Our third-generation leadership combines traditional expertise with cutting-edge technology, ensuring every stone in our collection meets the highest standards of beauty, authenticity, and ethical provenance.</p>
+                    </div>
+                </div>
+                <div class="heritage-image">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=700&fit=crop&q=80" alt="Heritage workshop">
+                    <div class="heritage-badge">
+                        <span class="badge-year">Est. 1952</span>
+                        <span class="badge-text">Three Generations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="our-mission">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-item">
+                    <div class="mission-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Ethical Sourcing</h3>
+                    <p>Every gemstone is traceable to its origin, ensuring fair labor practices and environmental responsibility throughout our supply chain.</p>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                        </svg>
+                    </div>
+                    <h3>Uncompromising Quality</h3>
+                    <p>Our gemologists use advanced techniques to evaluate and certify each stone, guaranteeing exceptional beauty and investment value.</p>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Global Expertise</h3>
+                    <p>With partners in mining regions across six continents, we maintain direct relationships with trusted sources worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Team Section -->
+    <section class="meet-team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Experts</h2>
+                <p>The passionate individuals behind every exceptional gemstone</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&q=80" alt="James Ashworth">
+                        <div class="member-overlay">
+                            <div class="member-social">
+                                <a href="#" class="social-link">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>James Ashworth</h4>
+                        <p class="member-role">Chief Executive Officer</p>
+                        <p class="member-bio">Third-generation gemologist with 25 years of experience in rare stone acquisition and international partnerships.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616c27b25e5?w=400&h=500&fit=crop&q=80" alt="Sarah Chen">
+                        <div class="member-overlay">
+                            <div class="member-social">
+                                <a href="#" class="social-link">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Dr. Sarah Chen</h4>
+                        <p class="member-role">Head Gemologist</p>
+                        <p class="member-bio">PhD in Mineralogy from GIA, specializing in colored stone authentication and advanced spectroscopic analysis.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&q=80" alt="Marcus Rodriguez">
+                        <div class="member-overlay">
+                            <div class="member-social">
+                                <a href="#" class="social-link">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Marcus Rodriguez</h4>
+                        <p class="member-role">Director of Sourcing</p>
+                        <p class="member-bio">Former mining engineer with deep connections to ethical mining operations in Colombia, Myanmar, and Madagascar.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop&q=80" alt="Elena Vasquez">
+                        <div class="member-overlay">
+                            <div class="member-social">
+                                <a href="#" class="social-link">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Elena Vasquez</h4>
+                        <p class="member-role">Client Relations Director</p>
+                        <p class="member-bio">Luxury retail specialist with expertise in building lasting relationships with collectors and high-net-worth clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="our-process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Rigorous Process</h2>
+                <p>From mine to collection, every step is carefully orchestrated</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Source & Discover</h3>
+                        <p>Our network of trusted partners identify exceptional rough stones in ethical mining operations worldwide.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Evaluate & Select</h3>
+                        <p>Master gemologists examine each stone using advanced instruments to assess quality, rarity, and potential.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Cut & Polish</h3>
+                        <p>Skilled artisans enhance each stone's natural beauty while preserving maximum carat weight and brilliance.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Certify & Document</h3>
+                        <p>Independent laboratories provide comprehensive certification, including origin determination and quality grading.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Curate & Present</h3>
+                        <p>Each gemstone is professionally photographed and catalogued with its complete provenance story.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Certifications Section -->
+    <section class="awards-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recognition & Certifications</h2>
+                <p>Industry acknowledgments that validate our commitment to excellence</p>
+            </div>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"></polyline>
+                        </svg>
+                    </div>
+                    <h4>GIA Certified</h4>
+                    <p>Gemological Institute of America accredited dealer</p>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                        </svg>
+                    </div>
+                    <h4>Ethical Sourcing</h4>
+                    <p>Certified by the Responsible Jewelry Council</p>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                            <path d="M4 22h16"></path>
+                            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+                        </svg>
+                    </div>
+                    <h4>Excellence Award</h4>
+                    <p>International Gem Society recognition for outstanding service</p>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h4>Security Certified</h4>
+                    <p>Highest level insurance and security protocols</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Connected</h2>
+                <p>Be the first to know about new arrivals, exclusive collections, and gemstone stories.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GEMSHIRE</h3>
+                    <p>The world's finest collection of ethically sourced, certified gemstones.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"></a>
+                        <a href="#" class="social-link"></a>
+                        <a href="#" class="social-link"></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Collections</h4>
+                    <nav class="footer-nav">
+                        <a href="#">Emeralds</a>
+                        <a href="#">Rubies</a>
+                        <a href="#">Sapphires</a>
+                        <a href="#">Diamonds</a>
+                        <a href="#">Rare Stones</a>
+                    </nav>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <nav class="footer-nav">
+                        <a href="about.html">About Us</a>
+                        <a href="#">Our Story</a>
+                        <a href="#">Certifications</a>
+                        <a href="#">Press</a>
+                        <a href="#">Careers</a>
+                    </nav>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <nav class="footer-nav">
+                        <a href="#">Contact Us</a>
+                        <a href="#">Size Guide</a>
+                        <a href="#">Shipping</a>
+                        <a href="#">Returns</a>
+                        <a href="#">FAQ</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="footer-locations">
+                <h4>Global Locations</h4>
+                <div class="locations-grid">
+                    <div class="location">
+                        <div class="location-header">
+                            <span class="flag">🇨🇦</span>
+                            <span class="country">Canada</span>
+                        </div>
+                        <p>+1-800-GEMSHIRE</p>
+                        <p>Toronto, Ontario</p>
+                    </div>
+                    <div class="location">
+                        <div class="location-header">
+                            <span class="flag">🇦🇺</span>
+                            <span class="country">Australia</span>
+                        </div>
+                        <p>+61-1800-GEMS</p>
+                        <p>Sydney, NSW</p>
+                    </div>
+                    <div class="location">
+                        <div class="location-header">
+                            <span class="flag">🇳🇱</span>
+                            <span class="country">Netherlands</span>
+                        </div>
+                        <p>+31-800-EDELST</p>
+                        <p>Amsterdam</p>
+                    </div>
+                    <div class="location">
+                        <div class="location-header">
+                            <span class="flag">🇩🇪</span>
+                            <span class="country">Germany</span>
+                        </div>
+                        <p>+49-800-EDELSTEIN</p>
+                        <p>Munich, Bavaria</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 GEMSHIRE. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

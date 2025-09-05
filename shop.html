@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEMSHIRE - Luxury Gemstones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <!-- Header -->
+    <header id="main-header" class="header">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="top-bar-left">
+                        <span class="slide-text active">Free shipping worldwide</span>
+                        <span class="slide-text">Certified authentic</span>
+                    </div>
+                    <div class="top-bar-right">
+                        <div class="country-selector-wrapper">
+                            <button id="country-selector" class="country-selector">
+                                <span id="current-country-flag">🇨🇦</span>
+                                <span id="current-country-name">Canada</span>
+                                <svg class="chevron-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6,9 12,15 18,9"></polyline>
+                                </svg>
+                            </button>
+                            <div id="country-dropdown" class="country-dropdown">
+                                <div class="country-option" data-country="canada">
+                                    <span class="flag">🇨🇦</span>
+                                    <span>Canada</span>
+                                </div>
+                                <div class="country-option" data-country="australia">
+                                    <span class="flag">🇦🇺</span>
+                                    <span>Australia</span>
+                                </div>
+                                <div class="country-option" data-country="netherlands">
+                                    <span class="flag">🇳🇱</span>
+                                    <span>Netherlands</span>
+                                </div>
+                                <div class="country-option" data-country="germany">
+                                    <span class="flag">🇩🇪</span>
+                                    <span>Germany</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="main-nav">
+            <div class="container">
+                <div class="nav-content">
+                    <!-- Mobile Left: Hamburger + Search -->
+                    <div class="mobile-nav-left">
+                        <button class="icon-btn mobile-menu-btn" id="mobile-menu-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </button>
+                        <button class="icon-btn" id="search-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Logo - centered on mobile -->
+                    <div class="logo">
+                        <img src="images/logo.jpeg" alt="Gemshire Logo" class="logo-image" />
+                        <h1>GEMSHIRE</h1>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <nav class="desktop-nav">
+                        <a href="index.html">Collections</a>
+                        <a href="#emeralds">Emeralds</a>
+                        <a href="#rubies">Rubies</a>
+                        <a href="#diamonds">Diamonds</a>
+                        <a href="about.html">About</a>
+                    </nav>
+
+                    <!-- Desktop Actions -->
+                    <div class="nav-actions">
+                        <button class="icon-btn" id="search-btn-desktop">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                        <button class="icon-btn" id="wishlist-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                        <button class="icon-btn cart-btn" id="cart-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            <span id="cart-count" class="cart-count">0</span>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Right: Country Flag -->
+                    <div class="mobile-nav-right">
+                        <div class="country-selector-wrapper">
+                            <button class="mobile-country-selector" id="mobile-country-selector">
+                                <span class="flag">🇨🇦</span>
+                                <svg class="chevron-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6,9 12,15 18,9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="mobile-country-dropdown" id="mobile-country-dropdown">
+                                <div class="country-option" data-country="canada">
+                                    <span class="flag">🇨🇦</span>
+                                    <span>Canada</span>
+                                </div>
+                                <div class="country-option" data-country="australia">
+                                    <span class="flag">🇦🇺</span>
+                                    <span>Australia</span>
+                                </div>
+                                <div class="country-option" data-country="netherlands">
+                                    <span class="flag">🇳🇱</span>
+                                    <span>Netherlands</span>
+                                </div>
+                                <div class="country-option" data-country="germany">
+                                    <span class="flag">🇩🇪</span>
+                                    <span>Germany</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-header">
+                <h2>Menu</h2>
+                <button id="mobile-menu-close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <nav class="mobile-nav">
+                <a href="index.html">Collections</a>
+                <a href="#emeralds">Emeralds</a>
+                <a href="#rubies">Rubies</a>
+                <a href="#sapphires">Sapphires</a>
+                <a href="#diamonds">Diamonds</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <h2>GEMSHIRE</h2>
+            <button class="icon-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="shop.html">Shop</a>
+            <a href="collections.html">Collections</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Shop Hero -->
+        <section class="shop-hero">
+            <div class="shop-hero-background"></div>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="shop-hero-content">
+                    <h1 class="shop-hero-title">Luxury Gemstones Collection</h1>
+                    <p class="shop-hero-subtitle">Discover the world's most exquisite gemstones, carefully curated for discerning collectors</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Content -->
+        <section class="shop-content">
+            <div class="container">
+                <!-- Shop Header -->
+                <div class="shop-header">
+                    <div class="shop-header-left">
+                        <h2>Premium Gemstones</h2>
+                        <p class="results-count">Showing <span id="resultsCount">12</span> of <span id="totalResults">48</span> results</p>
+                    </div>
+                    <div class="shop-header-right">
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="grid" title="Grid View">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="list" title="List View">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                        <select class="sort-select" id="sortSelect">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="carat-low">Carat: Low to High</option>
+                            <option value="carat-high">Carat: High to Low</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="shop-layout">
+                    <!-- Filters Sidebar -->
+                    <aside class="shop-filters">
+                        <div class="filters-header">
+                            <h3>Filters</h3>
+                            <button class="clear-filters" onclick="clearAllFilters()">Clear All</button>
+                        </div>
+
+                        <!-- Category Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-title">Category</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="diamonds" checked>
+                                    <span class="checkmark"></span>
+                                    Diamonds <span class="count">(12)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="rubies">
+                                    <span class="checkmark"></span>
+                                    Rubies <span class="count">(8)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="emeralds">
+                                    <span class="checkmark"></span>
+                                    Emeralds <span class="count">(10)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="sapphires">
+                                    <span class="checkmark"></span>
+                                    Sapphires <span class="count">(9)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="pearls">
+                                    <span class="checkmark"></span>
+                                    Pearls <span class="count">(5)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="opals">
+                                    <span class="checkmark"></span>
+                                    Opals <span class="count">(4)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-title">Price Range</h4>
+                            <div class="price-range">
+                                <div class="price-inputs">
+                                    <input type="number" id="priceMin" placeholder="Min" value="1000">
+                                    <span>to</span>
+                                    <input type="number" id="priceMax" placeholder="Max" value="50000">
+                                </div>
+                                <div class="price-slider">
+                                    <input type="range" id="priceSlider" min="1000" max="100000" value="50000" step="1000">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carat Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-title">Carat Weight</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="carat" value="0-1">
+                                    <span class="checkmark"></span>
+                                    Under 1 ct <span class="count">(15)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="carat" value="1-2">
+                                    <span class="checkmark"></span>
+                                    1 - 2 ct <span class="count">(18)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="carat" value="2-3">
+                                    <span class="checkmark"></span>
+                                    2 - 3 ct <span class="count">(10)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="carat" value="3+">
+                                    <span class="checkmark"></span>
+                                    Over 3 ct <span class="count">(5)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Cut Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-title">Cut</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="cut" value="round">
+                                    <span class="checkmark"></span>
+                                    Round <span class="count">(20)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="cut" value="oval">
+                                    <span class="checkmark"></span>
+                                    Oval <span class="count">(12)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="cut" value="emerald">
+                                    <span class="checkmark"></span>
+                                    Emerald <span class="count">(8)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="cut" value="princess">
+                                    <span class="checkmark"></span>
+                                    Princess <span class="count">(6)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="cut" value="cushion">
+                                    <span class="checkmark"></span>
+                                    Cushion <span class="count">(2)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Color Filter -->
+                        <div class="filter-group">
+                            <h4 class="filter-title">Color</h4>
+                            <div class="color-options">
+                                <div class="color-option" data-color="colorless" title="Colorless">
+                                    <div class="color-swatch" style="background: linear-gradient(45deg, #f8f8f8, #ffffff)"></div>
+                                </div>
+                                <div class="color-option" data-color="red" title="Red">
+                                    <div class="color-swatch" style="background: linear-gradient(45deg, #cc0000, #ff3333)"></div>
+                                </div>
+                                <div class="color-option" data-color="green" title="Green">
+                                    <div class="color-swatch" style="background: linear-gradient(45deg, #006600, #339933)"></div>
+                                </div>
+                                <div class="color-option" data-color="blue" title="Blue">
+                                    <div class="color-swatch" style="background: linear-gradient(45deg, #0066cc, #3399ff)"></div>
+                                </div>
+                                <div class="color-option" data-color="yellow" title="Yellow">
+                                    <div class="color-swatch" style="background: linear-gradient(45deg, #ffcc00, #ffdd33)"></div>
+                                </div>
+                                <div class="color-option" data-color="pink" title="Pink">
+                                    <div class="color-swatch" style="background: linear-gradient(45deg, #ff6699, #ffb3d1)"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Apply Filters Button -->
+                        <button class="apply-filters-btn">
+                            <i class="fas fa-filter"></i>
+                            Apply Filters
+                        </button>
+                    </aside>
+
+                    <!-- Products Grid -->
+                    <div class="shop-products">
+                        <!-- Mobile Filter Toggle -->
+                        <button class="mobile-filter-toggle" onclick="toggleMobileFilters()">
+                            <i class="fas fa-filter"></i>
+                            Filters
+                        </button>
+
+                        <div class="products-grid" id="productsGrid">
+                            <!-- Product Cards -->
+                            <div class="product-card" data-category="diamonds" data-price="12500" data-carat="1.2">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=400&fit=crop&q=80" alt="Premium Diamond">
+                                    <div class="product-badges">
+                                        <span class="badge featured">Featured</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                        <button class="action-btn quick-view-btn" title="Quick View" onclick="openProductModal('diamond-1')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-category">Diamonds</div>
+                                    <h3 class="product-title">Brilliant Round Diamond</h3>
+                                    <div class="product-specs">
+                                        <span class="spec">1.2 ct</span>
+                                        <span class="spec">VS1</span>
+                                        <span class="spec">D Color</span>
+                                        <span class="spec">Excellent</span>
+                                    </div>
+                                    <div class="product-price">$12,500</div>
+                                    <div class="product-buttons">
+                                        <a href="product-diamond.html" class="btn-primary product-btn">View Details</a>
+                                        <button class="btn-secondary add-to-cart" onclick="addToCart('diamond-1')">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="emeralds" data-price="8900" data-carat="2.1">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop&q=80" alt="Colombian Emerald">
+                                    <div class="product-badges">
+                                        <span class="badge new">New</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                        <button class="action-btn quick-view-btn" title="Quick View" onclick="openProductModal('emerald-1')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-category">Emeralds</div>
+                                    <h3 class="product-title">Colombian Emerald</h3>
+                                    <div class="product-specs">
+                                        <span class="spec">2.1 ct</span>
+                                        <span class="spec">VVS2</span>
+                                        <span class="spec">Intense Green</span>
+                                        <span class="spec">Emerald Cut</span>
+                                    </div>
+                                    <div class="product-price">$8,900</div>
+                                    <div class="product-buttons">
+                                        <a href="product-emerald.html" class="btn-primary product-btn">View Details</a>
+                                        <button class="btn-secondary add-to-cart" onclick="addToCart('emerald-1')">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="rubies" data-price="15200" data-carat="1.8">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1544547751-6e4f999de2a9?w=400&h=400&fit=crop&q=80" alt="Burmese Ruby">
+                                    <div class="product-badges">
+                                        <span class="badge rare">Rare</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                        <button class="action-btn quick-view-btn" title="Quick View" onclick="openProductModal('ruby-1')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-category">Rubies</div>
+                                    <h3 class="product-title">Burmese Pigeon Blood Ruby</h3>
+                                    <div class="product-specs">
+                                        <span class="spec">1.8 ct</span>
+                                        <span class="spec">VS1</span>
+                                        <span class="spec">Pigeon Blood</span>
+                                        <span class="spec">Oval</span>
+                                    </div>
+                                    <div class="product-price">$15,200</div>
+                                    <div class="product-buttons">
+                                        <a href="product-ruby.html" class="btn-primary product-btn">View Details</a>
+                                        <button class="btn-secondary add-to-cart" onclick="addToCart('ruby-1')">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="sapphires" data-price="6750" data-carat="2.5">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1602175092233-21e6d6d98da3?w=400&h=400&fit=crop&q=80" alt="Kashmir Sapphire">
+                                    <div class="product-actions">
+                                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                        <button class="action-btn quick-view-btn" title="Quick View" onclick="openProductModal('sapphire-1')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-category">Sapphires</div>
+                                    <h3 class="product-title">Kashmir Blue Sapphire</h3>
+                                    <div class="product-specs">
+                                        <span class="spec">2.5 ct</span>
+                                        <span class="spec">VVS1</span>
+                                        <span class="spec">Royal Blue</span>
+                                        <span class="spec">Cushion</span>
+                                    </div>
+                                    <div class="product-price">$6,750</div>
+                                    <div class="product-buttons">
+                                        <a href="product-sapphire.html" class="btn-primary product-btn">View Details</a>
+                                        <button class="btn-secondary add-to-cart" onclick="addToCart('sapphire-1')">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="diamonds" data-price="22000" data-carat="3.2">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=400&fit=crop&q=80" alt="Princess Diamond">
+                                    <div class="product-badges">
+                                        <span class="badge premium">Premium</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                        <button class="action-btn quick-view-btn" title="Quick View" onclick="openProductModal('diamond-2')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-category">Diamonds</div>
+                                    <h3 class="product-title">Princess Cut Diamond</h3>
+                                    <div class="product-specs">
+                                        <span class="spec">3.2 ct</span>
+                                        <span class="spec">FL</span>
+                                        <span class="spec">D Color</span>
+                                        <span class="spec">Ideal</span>
+                                    </div>
+                                    <div class="product-price">$22,000</div>
+                                    <div class="product-buttons">
+                                        <a href="product-diamond.html" class="btn-primary product-btn">View Details</a>
+                                        <button class="btn-secondary add-to-cart" onclick="addToCart('diamond-2')">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-category="pearls" data-price="3500" data-carat="12mm">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=400&fit=crop&q=80" alt="South Sea Pearl">
+                                    <div class="product-actions">
+                                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                        <button class="action-btn quick-view-btn" title="Quick View" onclick="openProductModal('pearl-1')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-category">Pearls</div>
+                                    <h3 class="product-title">South Sea Golden Pearl</h3>
+                                    <div class="product-specs">
+                                        <span class="spec">12mm</span>
+                                        <span class="spec">AAA</span>
+                                        <span class="spec">Golden</span>
+                                        <span class="spec">Round</span>
+                                    </div>
+                                    <div class="product-price">$3,500</div>
+                                    <div class="product-buttons">
+                                        <a href="product-pearl.html" class="btn-primary product-btn">View Details</a>
+                                        <button class="btn-secondary add-to-cart" onclick="addToCart('pearl-1')">
+                                            <i class="fas fa-shopping-bag"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Load More Button -->
+                        <div class="load-more-section">
+                            <button class="load-more-btn" onclick="loadMoreProducts()">
+                                <i class="fas fa-plus"></i>
+                                Load More Products
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated</h2>
+                    <p>Be the first to know about new arrivals and exclusive offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>GEMSHIRE</h3>
+                        <p>The world's finest collection of ethically sourced, certified gemstones.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"></a>
+                            <a href="#" class="social-link"></a>
+                            <a href="#" class="social-link"></a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Collections</h4>
+                        <nav class="footer-nav">
+                            <a href="#">Emeralds</a>
+                            <a href="#">Rubies</a>
+                            <a href="#">Sapphires</a>
+                            <a href="#">Diamonds</a>
+                            <a href="#">Rare Stones</a>
+                        </nav>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <nav class="footer-nav">
+                            <a href="about.html">About Us</a>
+                            <a href="#">Our Story</a>
+                            <a href="#">Certifications</a>
+                            <a href="#">Press</a>
+                            <a href="#">Careers</a>
+                        </nav>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <nav class="footer-nav">
+                            <a href="#">Contact Us</a>
+                            <a href="#">Size Guide</a>
+                            <a href="#">Shipping</a>
+                            <a href="#">Returns</a>
+                            <a href="#">FAQ</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="footer-locations">
+                    <h4>Global Locations</h4>
+                    <div class="locations-grid">
+                        <div class="location">
+                            <div class="location-header">
+                                <span class="flag">🇨🇦</span>
+                                <span class="country">Canada</span>
+                            </div>
+                            <p>+1-800-GEMSHIRE</p>
+                            <p>Toronto, Ontario</p>
+                        </div>
+                        <div class="location">
+                            <div class="location-header">
+                                <span class="flag">🇦🇺</span>
+                                <span class="country">Australia</span>
+                            </div>
+                            <p>+61-1800-GEMS</p>
+                            <p>Sydney, NSW</p>
+                        </div>
+                        <div class="location">
+                            <div class="location-header">
+                                <span class="flag">🇳🇱</span>
+                                <span class="country">Netherlands</span>
+                            </div>
+                            <p>+31-800-EDELST</p>
+                            <p>Amsterdam</p>
+                        </div>
+                        <div class="location">
+                            <div class="location-header">
+                                <span class="flag">🇩🇪</span>
+                                <span class="country">Germany</span>
+                            </div>
+                            <p>+49-800-EDELSTEIN</p>
+                            <p>Munich, Bavaria</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2025 GEMSHIRE. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Gemstone Modal -->
+    <div id="gemstone-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Gemstone Details</h2>
+                <button id="modal-close" class="modal-close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-image" src="" alt="">
+                </div>
+                <div class="modal-details">
+                    <div class="modal-section">
+                        <h3>Origin & Story</h3>
+                        <p id="modal-story"></p>
+                    </div>
+                    <div class="modal-specs">
+                        <div class="spec">
+                            <span class="spec-label">Carat Weight</span>
+                            <span id="modal-carat" class="spec-value"></span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Origin</span>
+                            <span id="modal-origin" class="spec-value"></span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Price</span>
+                            <span id="modal-price" class="spec-value"></span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Certification</span>
+                            <span id="modal-certification" class="spec-value"></span>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button id="add-to-cart" class="btn-primary">Add to Cart</button>
+                        <button id="add-to-wishlist" class="btn-secondary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
